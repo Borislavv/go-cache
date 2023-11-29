@@ -1,4 +1,4 @@
-package cacher
+package cache
 
 type Displacer interface {
 	Run(storage Storage)
