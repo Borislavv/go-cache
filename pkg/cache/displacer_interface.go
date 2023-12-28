@@ -1,4 +1,4 @@
-package displacer
+package cache
 
 import "github.com/Borislavv/go-cache/pkg/cache/storage"
 
