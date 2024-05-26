@@ -2,7 +2,6 @@ package cache
 
 import (
 	"context"
-	"github.com/Borislavv/go-cache/pkg/cache/storage"
 	"sync"
 	"time"
 )
@@ -25,12 +24,12 @@ func NewCacheDisplacer(ctx context.Context, interval time.Duration) *CacheDispla
 	}
 }
 
-func (d *CacheDisplacer) Run(storage storage.Storage) {
+func (d *CacheDisplacer) Run(storage Storage) {
 	d.wg.Add(1)
 	go d.run(storage)
 }
 
-func (d *CacheDisplacer) run(storage storage.Storage) {
+func (d *CacheDisplacer) run(storage Storage) {
 	ticker := time.NewTicker(d.interval)
 
 	defer func() {
